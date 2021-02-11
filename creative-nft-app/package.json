@@ -27,5 +27,8 @@
     "packages": [
       "packages/*"
     ]
+  },
+  "dependencies": {
+    "@arkane-network/web3-arkane-provider": "^0.18.0"
   }
 }
