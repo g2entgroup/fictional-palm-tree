@@ -1,14 +1,14 @@
 import { useCallback, useEffect, useState } from "react";
 import { Web3Provider } from "@ethersproject/providers";
 import Web3Modal from "web3modal";
-import WalletConnectProvider from "@walletconnect/web3-provider";
-//import "./node_modules/@arkane-network/arkane-connect/dist/connect.js";
+//import WalletConnectProvider from "@walletconnect/web3-provider";
+import Arkane from "@arkane-network/web3-arkane-provider";
 
 // Enter a valid infura key here to avoid being rate limited
 // You can get a key for free at https://infura.io/register
 const INFURA_ID = "ff5a5c50d1e649bdb777f80813747e3d";
 
-const NETWORK_NAME = "rinkby";
+const NETWORK_NAME = "Rinkeby";
 
 function useWeb3Modal(config = {}) {
   const [provider, setProvider] = useState();
@@ -22,28 +22,25 @@ function useWeb3Modal(config = {}) {
     cacheProvider: true,
     providerOptions: {
       walletconnect: {
-        package: WalletConnectProvider,
+        package: Arkane,
         options: {
-          infuraId,
+          clientId: 'Creative-Platform',
+          rpcUrl: 'https://kovan.infura.io/v3/'+ infuraId, //optional
+          environment: 'staging', //optional, production by default
+          signMethod: 'POPUP', //optional, REDIRECT by default
+          bearerTokenProvider: () => 'obtained_bearer_token', //optional, default undefined
+          //optional: you can set an identity provider to be used when authenticating
+          authenticationOptions: {
+            idpHint: 'google'
+          }
         },
       },
     },
   });
 
-  // const options = {
-  //   clientId: 'Creative-Platform',
-  //   rpcUrl: 'https://kovan.infura.io/v3/'+ infuraId, //optional
-  //   environment: 'staging', //optional, production by default
-  //   signMethod: 'POPUP', //optional, REDIRECT by default
-  //   bearerTokenProvider: () => 'obtained_bearer_token', //optional, default undefined
-  //   //optional: you can set an identity provider to be used when authenticating
-  //   authenticationOptions: {
-  //     idpHint: 'google'
-  //   }
-  // };
-  // Arkane.createArkaneProviderEngine(options).then(provider => {
-  //     web3 = new Web3(provider);
-  // });
+  Arkane.createArkaneProviderEngine(options).then(provider => {
+      web3 = new Web3(provider);
+  });
 
   // Open wallet selection modal.
   const loadWeb3Modal = useCallback(async () => {
