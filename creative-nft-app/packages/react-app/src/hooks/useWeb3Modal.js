@@ -32,7 +32,7 @@ function useWeb3Modal(config = {}) {
 
   // const options = {
   //   clientId: 'Creative-Platform',
-  //   rpcUrl: 'https://kovan.infura.io/v3/'+ INFURA_ID, //optional
+  //   rpcUrl: 'https://kovan.infura.io/v3/'+ infuraId, //optional
   //   environment: 'staging', //optional, production by default
   //   signMethod: 'POPUP', //optional, REDIRECT by default
   //   bearerTokenProvider: () => 'obtained_bearer_token', //optional, default undefined
