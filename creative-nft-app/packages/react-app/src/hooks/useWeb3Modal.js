@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { Web3Provider } from "@ethersproject/providers";
 // import Web3 from "web3";
 import Web3Modal from "web3modal";
@@ -9,36 +9,40 @@ import Arkane from "@arkane-network/web3-arkane-provider";
 // You can get a key for free at https://infura.io/register
 const INFURA_ID = "ff5a5c50d1e649bdb777f80813747e3d";
 
-const NETWORK_NAME = "Rinkeby";
+const NETWORK_NAME = "rinkeby";
 
 function useWeb3Modal(config = {}) {
   const [provider, setProvider] = useState();
-  const [autoLoaded, setAutoLoaded] = useState(false);
-  const { autoLoad = true, infuraId = INFURA_ID, NETWORK = NETWORK_NAME } = config;
+  const {
+    autoLoad = true,
+    infuraId = INFURA_ID,
+    NETWORK = NETWORK_NAME,
+  } = config;
 
-  const providerOptions = {
-    /* See Provider Options Section */
-    arkane: {
-      package: Arkane, //required
-      options: {
-        clientId: 'Creative-Platform',
-        rpcUrl: `https://rinkeby.infura.io/v3/${infuraId}`, //optional
-        environment: 'staging', //optional, production by default
-        signMethod: 'POPUP' //optional, REDIRECT by default
-        // bearerTokenProvider: () => 'obtained_bearer_token', //optional, default undefined
-        // //optional: you can set an identity provider to be used when authenticating
-        // authenticationOptions: {
-        //   idpHint: 'google'
-        // }
-      }
+const providerOptions = {
+  /* See Provider Options Section */
+  arkane: {
+    package: Arkane, //required
+    options: {
+      clientId: 'Creative-Platform',
+      rpcUrl: `https://rinkeby.infura.io/v3/${infuraId}`, //optional
+      environment: 'staging', //optional, production by default
+      signMethod: 'POPUP' //optional, REDIRECT by default
+      // bearerTokenProvider: () => 'obtained_bearer_token', //optional, default undefined
+      // //optional: you can set an identity provider to be used when authenticating
+      // authenticationOptions: {
+      //   idpHint: 'google'
+      // }
     }
   }
+}
+  
   // Web3Modal also supports many other wallets.
   // You can see other options at https://github.com/Web3Modal/web3modal
   const web3Modal = new Web3Modal({
     network: NETWORK,
     cacheProvider: true,
-    providerOptions
+    providerOptions,
   });
 
   // const connectProvider = await web3Modal.connectTo(Arkane);
@@ -63,13 +67,12 @@ function useWeb3Modal(config = {}) {
     [web3Modal],
   );
 
-  // If autoLoad is enabled and the the wallet had been loaded before, load it automatically now.
+  //If autoLoad is enabled and the the wallet had been loaded before, load it automatically now.
   useEffect(() => {
-    if (autoLoad && !autoLoaded && web3Modal.cachedProvider) {
+    if (autoLoad && web3Modal.cachedProvider && typeof provider === "undefined") {
       loadWeb3Modal();
-      setAutoLoaded(true);
     }
-  }, [autoLoad, autoLoaded, loadWeb3Modal, setAutoLoaded, web3Modal.cachedProvider]);
+  }, [provider, autoLoad, loadWeb3Modal, web3Modal.cachedProvider]);
 
   return [provider, loadWeb3Modal, logoutOfWeb3Modal];
 }
