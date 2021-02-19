@@ -10,7 +10,7 @@
 
 <p align="left"> <a href="https://twitter.com/g2entgroup" target="blank"><img src="https://img.shields.io/twitter/follow/g2entgroup?logo=twitter&style=for-the-badge" alt="g2entgroup" /></a> </p>
 
-- 🔭 We’re currently working on [The Creative Token](#)
+- 🔭 We’re currently working on [The Creative Platform](#)
 
 - 📫 How to reach us **info@g2entgroup.com**
 
