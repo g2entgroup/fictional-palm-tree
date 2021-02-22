@@ -8,7 +8,7 @@
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=gawainb" alt="g2entgroup" /></a> </p>
 
-[![Discord](https://img.shields.io/discord/592041321326182401?style=flat-square&logo=discord)](https://discordapp.com/invite/aSK4zew)
+[![Discord](https://img.shields.io/discord/592041321326182401?style=flat-square&logo=discord)](https://discordapp.com/invite/MFyqRVrj)
 <p align="left"> <a href="https://twitter.com/g2entgroup" target="blank"><img src="https://img.shields.io/twitter/follow/g2entgroup?logo=twitter&style=for-the-badge" alt="g2entgroup" /></a> </p>
 
 - 🔭 We’re currently working on [The Creative Platform](#)
