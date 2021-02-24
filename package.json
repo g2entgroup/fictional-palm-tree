@@ -1,0 +1,14 @@
+{
+  "name": "fictional-palm-tree",
+  "version": "1.0.0",
+  "description": "brach for designing the set of contracts that work as vendor platform",
+  "main": "index.js",
+  "repository": "https://github.com/g2entgroup/fictional-palm-tree.git",
+  "author": "Nicolas Guasca <nicolas.guasca@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@openzeppelin/contracts": "^3.4.0",
+    "@openzeppelin/contracts-upgradeable": "^3.4.0",
+    "hardhat": "^2.0.11"
+  }
+}
