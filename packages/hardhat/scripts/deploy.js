@@ -1,4 +1,5 @@
 /* eslint no-use-before-define: "warn" */
+
 const fs = require("fs");
 const chalk = require("chalk");
 const { config, ethers, tenderly } = require("hardhat");
@@ -6,6 +7,20 @@ const { utils } = require("ethers");
 const R = require("ramda");
 
 const main = async () => {
+
+  //----------------------Deploy Creative Token---------------------------------------------------
+  console.log("\n\n 📡 Deploying...\n");
+
+
+  const yourContract = await deploy("CreativeToken") // <-- add in constructor args like line 19 vvvv
+
+  console.log(
+    " 💾  Artifacts (address, abi, and args) saved to: ",
+    chalk.blue("packages/hardhat/artifacts/"),
+    "\n\n"
+  );
+  // -------------------------------------Deploy AaveApe-----------------------------------------------
+
 
   console.log("\n\n 📡 Deploying...\n");
 
@@ -89,6 +104,9 @@ const readArgsFile = (contractName) => {
   }
   return args;
 };
+
+
+
 
 main()
   .then(() => process.exit(0))
