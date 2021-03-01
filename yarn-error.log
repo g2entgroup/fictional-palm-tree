@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /Users/nicolasguascasantamaria/.yarn/bin/yarn.js add @openzeppelin/contracts-upgradable
+  /usr/local/bin/node /Users/nicolasguascasantamaria/.yarn/bin/yarn.js add @openzeppelidsfds
 
 PATH: 
   /Users/nicolasguascasantamaria/.yarn/bin:/Users/nicolasguascasantamaria/.config/yarn/global/node_modules/.bin:/Users/nicolasguascasantamaria/Library/Caches/activestate/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin:/Users/nicolasguascasantamaria/bin:/usr/local/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin://Users/nicolasguascasantamaria:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/nicolasguascasantamaria/.yarn/bin:/Users/nicolasguascasantamaria/.config/yarn/global/node_modules/.bin:/Users/nicolasguascasantamaria/Library/Caches/activestate/bin:/Library/Frameworks/Python.framework/Versions/3.9/bin:/Users/nicolasguascasantamaria/bin:/Users/nicolasguascasantamaria/.cargo/bin:/Users/nicolasguascasantamaria:/Users/nicolasguascasantamaria
@@ -14,8 +14,8 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@openzeppelin%2fcontracts-upgradable: Not found
-      at Request.params.callback [as _callback] (/Users/nicolasguascasantamaria/.yarn/lib/cli.js:66988:18)
+  Error: https://registry.yarnpkg.com/@openzeppelidsfds: Request "https://registry.yarnpkg.com/@openzeppelidsfds" returned a 405
+      at Request.params.callback [as _callback] (/Users/nicolasguascasantamaria/.yarn/lib/cli.js:66997:18)
       at Request.self.callback (/Users/nicolasguascasantamaria/.yarn/lib/cli.js:140749:22)
       at Request.emit (events.js:315:20)
       at Request.<anonymous> (/Users/nicolasguascasantamaria/.yarn/lib/cli.js:141721:10)
@@ -37,6 +37,7 @@ npm manifest:
     "license": "MIT",
     "dependencies": {
       "@openzeppelin/contracts": "^3.4.0",
+      "@openzeppelin/contracts-upgradeable": "^3.4.0",
       "hardhat": "^2.0.11"
     }
   }
@@ -69,6 +70,11 @@ Lockfile:
       rustbn.js "~0.2.0"
       safe-buffer "^5.1.1"
       util.promisify "^1.0.0"
+  
+  "@openzeppelin/contracts-upgradeable@^3.4.0":
+    version "3.4.0"
+    resolved "https://registry.yarnpkg.com/@openzeppelin/contracts-upgradeable/-/contracts-upgradeable-3.4.0.tgz#7674c73c643a509f1b90c509e3e72fe9aae02aeb"
+    integrity sha512-7wBcbukDqWZt/B1zjb7zyeWq+AC7rx7nGln7/hPxHdKd8PAiiteXd51Cp2KmGP8qaY0/TXh/fQLsA082LWp8Zw==
   
   "@openzeppelin/contracts@^3.4.0":
     version "3.4.0"
