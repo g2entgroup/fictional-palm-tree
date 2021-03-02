@@ -1,0 +1,24 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "MyToken",
+  "sourceName": "contracts/MyToken.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "token",
+      "outputs": [
+        {
+          "internalType": "contract ERC20Upgradeable",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x6080604052348015600f57600080fd5b5060bb8061001e6000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c8063fc0c546a14602d575b600080fd5b6033605f565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b603360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea264697066735822122026bac9ada0c3293ee8fbab8d1276fbeb74e27d2ef567e2f810ec7068f95996af64736f6c63430007030033",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c8063fc0c546a14602d575b600080fd5b6033605f565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b603360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea264697066735822122026bac9ada0c3293ee8fbab8d1276fbeb74e27d2ef567e2f810ec7068f95996af64736f6c63430007030033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
