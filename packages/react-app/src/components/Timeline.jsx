@@ -5,8 +5,6 @@ import { SendOutlined, DownloadOutlined, EditOutlined } from "@ant-design/icons"
 
 const { Text } = Typography;
 
-// displays a timeline for scaffold-eth usage
-
 export default function TimelineDisplay(props) {
   return (
     <Timeline mode="right">

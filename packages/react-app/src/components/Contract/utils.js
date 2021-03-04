@@ -1,7 +1,4 @@
-import React from "react";
 import { formatUnits } from "@ethersproject/units";
-import { isAddress } from "@ethersproject/address";
-import { Address } from "../../components";
 
 const tryToDisplay = thing => {
   if (thing && thing.toNumber) {
@@ -10,14 +7,6 @@ const tryToDisplay = thing => {
     } catch (e) {
       return "Ξ"+formatUnits(thing, "ether");
     }
-  }
-  if(thing && thing.indexOf && thing.indexOf("0x")==0 && thing.length == 42){
-    return (
-      <Address
-        address={thing}
-        fontSize={22}
-      />
-    )
   }
   return JSON.stringify(thing);
 };

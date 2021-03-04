@@ -2,37 +2,19 @@ import { useState, useEffect } from "react";
 import { getAddress } from "@ethersproject/address";
 import { useLocalStorage } from "."
 
-// resolved if(name){} to not save "" into cache 
-
-/*
-  ~ What it does? ~
-
-  Gets ENS name from given address and provider
-
-  ~ How can I use? ~
-
-  const ensName = useLookupAddress(mainnetProvider, address);
-
-  ~ Features ~
-
-  - Provide address and get ENS name corresponding to given address
-*/
-
 const lookupAddress = async (provider, address) => {
   try {
     // Accuracy of reverse resolution is not enforced.
     // We then manually ensure that the reported ens name resolves to address
     const reportedName = await provider.lookupAddress(address);
-    
     const resolvedAddress = await provider.resolveName(reportedName);
-
     if (getAddress(address) === getAddress(resolvedAddress)) {
       return reportedName;
     }
   } catch (e) {
     // Do nothing
   }
-  return 0;
+  return "";
 };
 
 const useLookupAddress = (provider, address) => {
@@ -45,13 +27,11 @@ const useLookupAddress = (provider, address) => {
     }else{
       if (provider) {
         lookupAddress(provider, address).then((name) => {
-          if (name) {
-            setEnsName(name);
-            setEnsCache({
-              timestamp:Date.now()+360000,
-              name:name
-            })
-          }
+          setEnsName(name)
+          setEnsCache({
+            timestamp:Date.now()+360000,
+            name:name
+          })
         });
       }
     }

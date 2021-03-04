@@ -13,4 +13,7 @@ export { default as Blockie } from "./Blockie";
 export { default as Header } from "./Header";
 export { default as Timeline } from "./Timeline";
 export { default as GasGauge } from "./GasGauge";
-export { default as BytesStringInput } from "./BytesStringInput";
+export { default as Swap } from "./Swap";
+export { Lend } from "./Lend";
+export { default as SnatchToken } from "./SnatchToken";
+export { default as Approver } from "./Approver";

@@ -40,8 +40,13 @@ module.exports = {
   // (you will need to restart the `yarn run start` dev server after editing the .env)
 
   networks: {
+    hardhat: {
+      forking: {
+        url: "https://mainnet.infura.io/v3/460f40a260564ac4a4f4b3fffb032dad"
+      }
+    },
     localhost: {
-      url: "http://localhost:8545",
+      url: "http://localhost:8545"
       /*
         notice no mnemonic here? it will just use account 0 of the hardhat node to deploy
         (you can put in a mnemonic here to set the deployer locally)
@@ -78,14 +83,7 @@ module.exports = {
       },
     },
     xdai: {
-      url: 'https://rpc.xdaichain.com/',
-      gasPrice: 1000000000,
-      accounts: {
-        mnemonic: mnemonic(),
-      },
-    },
-    matic: {
-      url: 'https://rpc-mainnet.maticvigil.com/',
+      url: 'https://dai.poa.network',
       gasPrice: 1000000000,
       accounts: {
         mnemonic: mnemonic(),
@@ -95,25 +93,13 @@ module.exports = {
   solidity: {
     compilers: [
       {
-        version: "0.8.0",
-        settings: {
-          optimizer: {
-            enabled: true,
-            runs: 200
-          }
-        }
+        version: "0.8.1"
       },
       {
-        version: "0.5.5",
-        settings: {
-          optimizer: {
-            enabled: true,
-            runs: 200
-          }
-        }
+        version: "0.6.8"
       },
       {
-        version: "0.6.7",
+        version: "0.6.12",
         settings: {
           optimizer: {
             enabled: true,
@@ -121,9 +107,11 @@ module.exports = {
           }
         }
       }
-    ],
-
+    ]
   },
+  mocha: {
+    timeout: 80000
+  }
 };
 
 const DEBUG = false;

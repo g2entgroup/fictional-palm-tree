@@ -36,7 +36,7 @@ export default function ExampleUI({purpose, setPurposeEvents, address, mainnetPr
 
         Your Address:
         <Address
-            address={address}
+            value={address}
             ensProvider={mainnetProvider}
             fontSize={16}
         />
@@ -45,7 +45,7 @@ export default function ExampleUI({purpose, setPurposeEvents, address, mainnetPr
 
         ENS Address Example:
         <Address
-          address={"0x34aA3F359A9D614239015126635CE7732c18fDF3"} /* this will show as austingriffith.eth */
+          value={"0x34aA3F359A9D614239015126635CE7732c18fDF3"} /* this will show as austingriffith.eth */
           ensProvider={mainnetProvider}
           fontSize={16}
         />
@@ -60,7 +60,7 @@ export default function ExampleUI({purpose, setPurposeEvents, address, mainnetPr
         <Balance
           address={address}
           provider={localProvider}
-          price={price}
+          dollarMultiplier={price}
         />
 
         <Divider/>
@@ -75,7 +75,7 @@ export default function ExampleUI({purpose, setPurposeEvents, address, mainnetPr
 
         Your Contract Address:
         <Address
-            address={readContracts?readContracts.YourContract.address:readContracts}
+            value={readContracts?readContracts.YourContract.address:readContracts}
             ensProvider={mainnetProvider}
             fontSize={16}
         />
@@ -141,7 +141,7 @@ export default function ExampleUI({purpose, setPurposeEvents, address, mainnetPr
             return (
               <List.Item key={item.blockNumber+"_"+item.sender+"_"+item.purpose}>
                 <Address
-                    address={item[0]}
+                    value={item[0]}
                     ensProvider={mainnetProvider}
                     fontSize={16}
                   /> =>
